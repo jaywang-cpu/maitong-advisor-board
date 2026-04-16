@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>MAITONG Board of Advisors - Team Guide</title>
+<style>
+  @page { size: A4; margin: 2cm; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    color: #1a1a1a;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  /* Cover */
+  .cover {
+    text-align: center;
+    padding: 80px 0 60px;
+    border-bottom: 3px solid #0a2218;
+    margin-bottom: 40px;
+    page-break-after: always;
+  }
+  .cover h1 { font-size: 36px; color: #0a2218; letter-spacing: 4px; }
+  .cover .subtitle { font-size: 18px; color: #4acf85; margin-top: 12px; }
+  .cover .tagline { font-size: 14px; color: #888; margin-top: 30px; font-style: italic; }
+  .cover .meta { font-size: 12px; color: #aaa; margin-top: 60px; }
+
+  /* Sections */
+  h2 {
+    font-size: 22px;
+    color: #0a2218;
+    border-left: 4px solid #4acf85;
+    padding-left: 12px;
+    margin: 40px 0 16px;
+  }
+  h3 {
+    font-size: 16px;
+    color: #333;
+    margin: 24px 0 10px;
+  }
+  p { margin-bottom: 12px; font-size: 14px; }
+
+  /* UI mockups */
+  .ui-box {
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 16px 0;
+    font-size: 13px;
+  }
+  .ui-box .label {
+    font-size: 11px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .ui-header {
+    background: #0a2218;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+  }
+  .ui-header .brand { color: #4acf85; font-weight: bold; font-size: 16px; }
+  .ui-header .sub { color: #c9a84c; font-size: 12px; margin-left: 8px; }
+  .ui-body {
+    background: #0f2e20;
+    padding: 20px;
+    border-radius: 0 0 8px 8px;
+    color: #ccc;
+    font-size: 12px;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 13px;
+  }
+  th {
+    background: #0a2218;
+    color: white;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+  }
+  td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #eee;
+  }
+  tr:nth-child(even) td { background: #f8f9fa; }
+
+  /* Steps */
+  .step {
+    display: flex;
+    gap: 16px;
+    margin: 16px 0;
+    align-items: flex-start;
+  }
+  .step-num {
+    background: #4acf85;
+    color: #0a2218;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .step-content { flex: 1; }
+  .step-content strong { color: #0a2218; }
+
+  /* Flow diagram */
+  .flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 24px 0;
+    flex-wrap: wrap;
+  }
+  .flow-box {
+    background: #0a2218;
+    color: #4acf85;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .flow-arrow { color: #c9a84c; font-size: 18px; }
+
+  /* Advisor grid */
+  .advisor-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .advisor-card {
+    background: #f8f9fa;
+    border: 1px solid #e8e8e8;
+    border-radius: 6px;
+    padding: 12px;
+  }
+  .advisor-card .dept {
+    font-size: 11px;
+    color: #4acf85;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  .advisor-card .names {
+    font-size: 12px;
+    color: #555;
+  }
+
+  /* Highlight box */
+  .highlight {
+    background: #fffbe6;
+    border: 1px solid #c9a84c;
+    border-radius: 6px;
+    padding: 16px;
+    margin: 16px 0;
+    font-size: 13px;
+  }
+  .highlight strong { color: #0a2218; }
+
+  .warning {
+    background: #fff0f0;
+    border: 1px solid #d44;
+    border-radius: 6px;
+    padding: 16px;
+    margin: 16px 0;
+    font-size: 13px;
+  }
+
+  .page-break { page-break-before: always; }
+
+  ul, ol { margin: 8px 0 12px 20px; font-size: 14px; }
+  li { margin-bottom: 4px; }
+  code {
+    background: #f0f0f0;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-family: "SF Mono", "Fira Code", monospace;
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <h1>MAITONG</h1>
+  <div class="subtitle">Board of Advisors</div>
+  <div class="tagline">21 位世界级顾问，为你的每一个决策提供多维度建议</div>
+  <div class="meta">
+    Internal Team Guide / 团队内部使用手册<br>
+    Version 1.0 — April 2026
+  </div>
+</div>
+
+<!-- WHAT IS THIS -->
+<h2>这是什么</h2>
+<p>MAITONG Board of Advisors 是我们团队内部的 AI 决策辅助工具。它通过 AI 模拟 21 位来自不同领域的世界级人物的思维方式，针对你提出的任何问题，从多个专业角度给出建议。</p>
+
+<p>你可以把它想象成：<strong>一个永远在线的董事会</strong>，里面坐着 Elon Musk、Sam Altman、倪海厦、Warren Buffett 等人，随时回答你关于 MAITONG 的任何问题。</p>
+
+<div class="flow">
+  <div class="flow-box">你提问</div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-box">选择顾问</div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-box">Round 1<br>各自回答</div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-box">Round 2<br>互相辩论</div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-box">Board Consensus<br>综合结论</div>
+</div>
+
+<!-- HOW TO USE -->
+<h2>如何使用</h2>
+
+<div class="step">
+  <div class="step-num">1</div>
+  <div class="step-content">
+    <strong>打开网址</strong><br>
+    在浏览器中访问团队分享的链接，输入你的用户名和密码登录。<br>
+    首次使用需要 <strong>Invite Code</strong>（向强强索取）。
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">2</div>
+  <div class="step-content">
+    <strong>选择顾问</strong><br>
+    页面顶部按 7 个部门分类显示所有顾问。你可以：
+    <ul>
+      <li>点击部门名 → 全选/取消该部门所有顾问</li>
+      <li>点击单个人名 → 选择/取消单个顾问</li>
+      <li>点击 All / None → 全选或清空</li>
+    </ul>
+    <strong>建议选 3-5 位顾问</strong>，兼顾质量和速度。
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">3</div>
+  <div class="step-content">
+    <strong>提问</strong><br>
+    在文本框中输入你的问题，支持中文或英文（回答语言会自动匹配提问语言）。<br>
+    点击 "Ask X Advisors" 按钮提交。等待约 30-90 秒。
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">4</div>
+  <div class="step-content">
+    <strong>阅读结果</strong><br>
+    结果分为四层，由上到下逐层深入：
+  </div>
+</div>
+
+<!-- RESULT STRUCTURE -->
+<div class="ui-box">
+  <div class="label">结果结构</div>
+  <table>
+    <tr>
+      <th style="width:30%">区域</th>
+      <th>内容</th>
+      <th style="width:15%">默认</th>
+    </tr>
+    <tr>
+      <td><strong>Board Consensus</strong></td>
+      <td>综合结论 — Verdict / Why / All Agree / All Worry / Action Steps / Risk</td>
+      <td>展开</td>
+    </tr>
+    <tr>
+      <td><strong>Department Advice</strong></td>
+      <td>各部门的具体建议，按领域分类</td>
+      <td>折叠</td>
+    </tr>
+    <tr>
+      <td><strong>Agreement Flow</strong></td>
+      <td>顾问之间的辩论 — 谁同意谁、谁反对谁、为什么</td>
+      <td>折叠</td>
+    </tr>
+    <tr>
+      <td><strong>Individual Answers</strong></td>
+      <td>每位顾问的独立回答（Round 1 原始答案）</td>
+      <td>折叠</td>
+    </tr>
+  </table>
+</div>
+
+<div class="highlight">
+  <strong>日常使用建议：</strong>只看 Board Consensus 就够了。需要深入了解某个角度时，再展开对应的部门建议或个人回答。
+</div>
+
+<div class="page-break"></div>
+
+<!-- ADVISORS -->
+<h2>顾问名单 (21 位)</h2>
+
+<div class="advisor-grid">
+  <div class="advisor-card">
+    <div class="dept">Overview / 综合</div>
+    <div class="names">Elon Musk — 第一性原则<br>Steve Jobs — 产品极致主义<br>张一鸣 — 系统思维</div>
+  </div>
+  <div class="advisor-card">
+    <div class="dept">Business / 商业</div>
+    <div class="names">Sam Altman — 早期融资<br>Paul Graham — 创业本质<br>Peter Thiel — 从0到1</div>
+  </div>
+  <div class="advisor-card">
+    <div class="dept">Design / 设计</div>
+    <div class="names">Jony Ive — 工业设计<br>深泽直人 — 东方美学<br>James Dyson — 工程迭代</div>
+  </div>
+  <div class="advisor-card">
+    <div class="dept">Clinical / 临床</div>
+    <div class="names">倪海厦 — 经方脉诊<br>黄煌 — 方证对应<br>李可 — 危急重症</div>
+  </div>
+  <div class="advisor-card">
+    <div class="dept">Tech / 技术</div>
+    <div class="names">Andrej Karpathy — AI架构<br>Demis Hassabis — AI+生物医学<br>吴恩达 — ML工程化</div>
+  </div>
+  <div class="advisor-card">
+    <div class="dept">Legal / 法务</div>
+    <div class="names">张磊 — 中美法律架构<br>Marc Andreessen — 硅谷股权<br>刘强东 — 知识产权</div>
+  </div>
+  <div class="advisor-card">
+    <div class="dept">Finance / 财务</div>
+    <div class="names">Warren Buffett — 资本配置<br>孙正义 — 早期投资<br>Charlie Munger — 多元思维</div>
+  </div>
+</div>
+
+<!-- WHICH ADVISORS TO PICK -->
+<h2>不同角色推荐选谁</h2>
+
+<table>
+  <tr>
+    <th>你的角色</th>
+    <th>推荐顾问组合</th>
+    <th>适合问什么</th>
+  </tr>
+  <tr>
+    <td><strong>Yvette (CEO)</strong></td>
+    <td>Sam Altman + Paul Graham + Peter Thiel + Warren Buffett</td>
+    <td>融资策略、pitch优化、商业模式、accelerator申请</td>
+  </tr>
+  <tr>
+    <td><strong>Jiaqiang (CTO)</strong></td>
+    <td>Elon Musk + Karpathy + Hassabis + 张磊</td>
+    <td>技术架构、硬件方案、IP策略、跨部门决策</td>
+  </tr>
+  <tr>
+    <td><strong>Moira (算法)</strong></td>
+    <td>Karpathy + 吴恩达 + Hassabis + 倪海厦</td>
+    <td>模型架构、数据策略、中医特征工程</td>
+  </tr>
+  <tr>
+    <td><strong>全局战略问题</strong></td>
+    <td>每个部门选1位 (7位)</td>
+    <td>"我们下一步最重要的事是什么"</td>
+  </tr>
+</table>
+
+<div class="page-break"></div>
+
+<!-- EXAMPLE QUESTIONS -->
+<h2>示例问题</h2>
+
+<h3>商业类</h3>
+<ul>
+  <li>我们应该先申请 YC 还是 Techstars？</li>
+  <li>如何在没有硬件原型的情况下说服投资人？</li>
+  <li>$149 的定价合理吗？</li>
+</ul>
+
+<h3>技术类</h3>
+<ul>
+  <li>用 1D-CNN 还是 Transformer 做脉诊信号分类？</li>
+  <li>没有真实患者数据的情况下，模型训练策略是什么？</li>
+  <li>三模态融合用 Bayesian 还是 attention-based fusion？</li>
+</ul>
+
+<h3>临床类</h3>
+<ul>
+  <li>如何确保脉诊标注的一致性（κ>0.75）？</li>
+  <li>寸关尺三部脉的 PPG 传感器间距 5mm 够不够？</li>
+</ul>
+
+<h3>法务/财务类</h3>
+<ul>
+  <li>83(b) election 有什么需要特别注意的？</li>
+  <li>$50K 天使轮的 burn rate 怎么控制？</li>
+  <li>JHU TTO 和 UW CoMotion 的 IP 风险哪个更大？</li>
+</ul>
+
+<!-- RULES -->
+<h2>使用须知</h2>
+
+<div class="warning">
+  <strong>重要提醒：</strong>
+  <ul>
+    <li>每人每天 <strong>30 个问题</strong> 的限额</li>
+    <li>所有问答记录会保存在 History 中，团队成员可以互相查看</li>
+    <li>顾问的回答是 AI 模拟，不代表真人观点，仅供决策参考</li>
+    <li>涉及公司机密的问题请谨慎提问，数据存储在本地服务器</li>
+  </ul>
+</div>
+
+<h3>账号信息</h3>
+<table>
+  <tr><th>项目</th><th>说明</th></tr>
+  <tr><td>网址</td><td>由强强分享（内部链接）</td></tr>
+  <tr><td>首次注册</td><td>需要 Invite Code（找强强要）+ 选择你的角色</td></tr>
+  <tr><td>角色选项</td><td>Jiaqiang (CTO) / Yvette (CEO) / Moira (Algorithm)</td></tr>
+  <tr><td>密码</td><td>注册时自行设定，请记住</td></tr>
+</table>
+
+<h3>History 功能</h3>
+<p>切换到 History 标签页可以查看所有历史问答。支持：</p>
+<ul>
+  <li><strong>My Questions</strong> — 只看自己的提问</li>
+  <li><strong>Team Feed</strong> — 查看所有团队成员的提问</li>
+  <li><strong>按部门筛选</strong> — 顶部标签快速过滤</li>
+</ul>
+
+<div style="text-align: center; margin-top: 60px; padding-top: 20px; border-top: 1px solid #eee;">
+  <p style="color: #aaa; font-size: 12px;">
+    MAITONG Board of Advisors v1.0<br>
+    Built for the MAITONG team. Powered by Claude.
+  </p>
+</div>
+
+</body>
+</html>
